@@ -7,92 +7,24 @@
     <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
-
-<body >
+<body>
     <div class="main-div">
-    <h1 >STOP WATCH</h1>
-    <div class="bor">
-    <div class="main">   
-    <span id="hours"> </span>
-    <span id="mins">  </span>
-    <span id="sec">  </span>
-    <span id="count">  </span>
+        <h1>STOP WATCH</h1>
+        <div class="bor">
+            <div class="main">   
+                <span id="hours"> </span>
+                <span id="mins">  </span>
+                <span id="sec">  </span>
+                <span id="count">  </span>
+            </div>
+
+            <div class="buttons">
+                <button class="button-start" onclick="start()">Start </button>
+                <button class="button-stop" onclick="stop()">Stop</button>
+                <button class="button-reset" onclick="reset()">Reset</button>
+            </div>
+        </div> 
     </div>
-
-    <div class="buttons">
-    <button class="button-start" onclick="start()" >Start </button>
-    <button class="button-stop" onclick="stop()"> Stop</button>
-    <button class="button-reset" onclick="reset()">Reset</button>
-
-</div>
-</div> 
-</div>
-<script>
-    let hours= 0;
-    let min= 0;
-    let sec= 0;
-    let count=0;
-    document.getElementById("hours").innerHTML="00:  ";
-    document.getElementById("mins").innerHTML=" 00:  ";
-    document.getElementById("sec").innerHTML="  00:  ";
-    document.getElementById("count").innerHTML=" 00   ";
-
-let start = ()=> {
-    timer=true;
-    stopWatch();
-}
-let stop = ()=>{
-    timer=false;
-}
-
-let reset = () =>{
-    document.getElementById("hours").innerHTML="00";
-    document.getElementById("mins").innerHTML=" :00";
-    document.getElementById("sec").innerHTML="  :00";
-    document.getElementById("count").innerHTML="  :00";
-    timer=false;
-
-}
-
-
-
-function stopWatch(){
-    if(timer){
-        count++;
-        
-    if(count ==100){
-       sec++;
-       count=00; 
-    }
-    if(sec==60){
-        min++;
-        sec=00;
-        count=00; 
-    }
-    if(min==60){
-        hours++;
-        min=0;
-         sec=00;
-        count=00;
-    }
-      
-    document.getElementById("hours").innerHTML=hours + " : ";
-    document.getElementById("mins").innerHTML=min + "  : ";
-    document.getElementById("sec").innerHTML=sec + "  :";
-    document.getElementById("count").innerHTML=count + " ";
-
-    setTimeout(stopWatch, 10);
- }
-  
-}
-    
-
-
-
-
-
-
- 
-</script>
+    <script src="./script.js"></script>
 </body>
 </html>
